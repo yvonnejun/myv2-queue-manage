@@ -46,11 +46,15 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
+      'static':path.resolve(__dirname, '../static'),//增加这一行代码
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
+    //设置基本目录结构
+    // contentBase:path.resolve(__dirname,'dist'),
     historyApiFallback: true,
     noInfo: true,
     overlay: true
